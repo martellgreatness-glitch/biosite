@@ -1,13 +1,5 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Always use Martell's latest original portrait in the hero.
-const heroPortrait = document.querySelector(".hero-image-card img");
-if (heroPortrait) {
-  heroPortrait.src = "assets/martell-bio-20260913.jpg?v=9";
-  heroPortrait.decoding = "async";
-  heroPortrait.fetchPriority = "high";
-}
-
 // Add the self-paced Own Your Block Starter Kit to the existing services grid.
 const serviceGrid = document.querySelector("#services .service-grid");
 if (serviceGrid) {
