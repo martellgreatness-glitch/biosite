@@ -42,4 +42,33 @@ if (serviceGrid) {
   else serviceGrid.appendChild(starterKit);
 }
 
+// Speaking engagements now begin with intake, then move to the planning call.
+const speakingRequestUrl = "speaking-engagement.html";
+const speakingCard = Array.from(document.querySelectorAll("#services .service-card")).find(card =>
+  card.textContent.includes("Keynotes & Interactive Workshops")
+);
+if (speakingCard) {
+  const links = speakingCard.querySelectorAll("a.text-link");
+  if (links[0]) {
+    links[0].href = speakingRequestUrl;
+    links[0].target = "_self";
+    links[0].removeAttribute("rel");
+    links[0].textContent = "Request a Speaking Engagement →";
+  }
+  if (links[1]) {
+    links[1].href = speakingRequestUrl;
+    links[1].target = "_self";
+    links[1].removeAttribute("rel");
+    links[1].textContent = "Start with the intake →";
+  }
+}
+
+// Replace public speaking-planning-call links with the intake-first request flow.
+document.querySelectorAll('a[href="https://calendly.com/martellgreatness/speaking-workshop-planning-call"]').forEach(link => {
+  link.href = speakingRequestUrl;
+  link.target = "_self";
+  link.removeAttribute("rel");
+  if (link.textContent.includes("Schedule")) link.textContent = "Request a Speaking Engagement";
+});
+
 // GitHub Pages is static. Connect the general contact form in index.html to a hosted form endpoint before launch.
