@@ -1,5 +1,18 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Keep the hero portrait on a stable filename tied to the original image blob.
+const heroPortrait = document.querySelector(".hero-image-card img");
+if (heroPortrait) {
+  heroPortrait.src = "assets/martell-original.png?v=15";
+  heroPortrait.alt = "Martell Collins";
+  heroPortrait.decoding = "async";
+  heroPortrait.fetchPriority = "high";
+  heroPortrait.onerror = function () {
+    this.onerror = null;
+    this.src = "https://raw.githubusercontent.com/martellgreatness-glitch/biosite/main/assets/7c474f91-594a-48af-9d3e-9494931720ce.png";
+  };
+}
+
 // Add the self-paced Own Your Block Starter Kit to the existing services grid.
 const serviceGrid = document.querySelector("#services .service-grid");
 if (serviceGrid) {
@@ -22,7 +35,6 @@ if (serviceGrid) {
     <a class="text-link" href="https://buy.stripe.com/28E9AT79o77z3vBgwlasg04" target="_blank" rel="noopener">Purchase Starter Kit →</a>
   `;
 
-  // Place it directly before the personalized Own Your Block 1:1 offer.
   const oneToOneCard = Array.from(serviceGrid.children).find(card =>
     card.textContent.includes("Own Your Block — 1:1")
   );
