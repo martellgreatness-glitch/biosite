@@ -3,7 +3,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // Keep the hero portrait on a stable filename tied to the original image blob.
 const heroPortrait = document.querySelector(".hero-image-card img");
 if (heroPortrait) {
-  heroPortrait.src = "assets/martell-original.png?v=15";
+  heroPortrait.src = "assets/IMG_1818.jpeg?v=1818";
   heroPortrait.alt = "Martell Collins";
   heroPortrait.decoding = "async";
   heroPortrait.fetchPriority = "high";
