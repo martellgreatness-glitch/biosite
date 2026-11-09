@@ -21,7 +21,7 @@ if (serviceGrid) {
   starterKit.innerHTML = `
     <div class="service-top">
       <span class="pill">Residents · Self-Paced Digital Course</span>
-      <span class="price">$50</span>
+      <span class="price">$30</span>
     </div>
     <h3>Own Your Block Starter Kit</h3>
     <p>A beginner-friendly, self-paced Build Where You Live course for residents ready to understand the first steps of turning vacant land into a responsible community asset.</p>
